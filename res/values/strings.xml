@@ -5,6 +5,7 @@
     <string name="title_item_detail">Item Detail</string>
     <string name="profilePicture">ProfilePicture</string>
     <string name="loading">loading</string>
-    <string name="description">"description"</string>
+    <string name="name">name</string>
+    <string name="description">description</string>
 
 </resources>
