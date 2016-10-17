@@ -1,0 +1,21 @@
+public String compress(String str) {
+        if (str == null || str.isEmpty()) {
+            return str;
+        }
+
+        char[] array = str.toCharArray();
+        StringBuffer compressed = new StringBuffer();
+        int count = 1;
+
+
+        for (int i = 0; i < array.length; i++) {
+            if ((array.length - 1 > i) && array[i] == array[i + 1]) {
+                count++;
+            } else {
+                compressed.append(array[i]).append(count);
+                count = 1;
+            }
+
+        }
+        return compressed.toString();
+    }
