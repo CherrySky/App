@@ -1,27 +1,27 @@
-if (first == second ||
-                Math.abs(first.length() - second.length()) >= 2) {
+public boolean oneEditAway(String first, String second) {
+        if (Math.abs(first.length() - second.length()) > 1) {
             return false;
         }
-
-        int firstIndex = 0;
-        int secondIndex = 0;
+        int i = 0;
+        int j = 0;
 
         boolean isOneEdit = false;
-        while (firstIndex < first.length()) {
-            if (first.charAt(firstIndex) != second.charAt(secondIndex)) {
+        while (i < first.length() && i != second.length()) {
+            if (first.charAt(i) != second.charAt(j)) {
                 if (isOneEdit) return false;
                 isOneEdit = true;
                 if (first.length() > second.length()) {
-                    firstIndex++;
+                    i++;
                 } else if (second.length() > first.length()) {
-                    secondIndex++;
+                    j++;
                 } else {
-                    firstIndex++;
-                    secondIndex++;
+                    i++;
+                    j++;
                 }
             } else {
-                firstIndex++;
-                secondIndex++;
+                i++;
+                j++;
             }
         }
-        return isOneEdit;
+        return true;
+    }
