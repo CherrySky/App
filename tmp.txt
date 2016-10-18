@@ -1,27 +1,12 @@
-public boolean oneEditAway(String first, String second) {
-        if (Math.abs(first.length() - second.length()) > 1) {
-            return false;
-        }
-        int i = 0;
-        int j = 0;
-
-        boolean isOneEdit = false;
-        while (i < first.length() && i != second.length()) {
-            if (first.charAt(i) != second.charAt(j)) {
-                if (isOneEdit) return false;
-                isOneEdit = true;
-                if (first.length() > second.length()) {
-                    i++;
-                } else if (second.length() > first.length()) {
-                    j++;
-                } else {
-                    i++;
-                    j++;
+Arrays.sort(array);
+        List<Integer> list = new ArrayList<>();
+        int pre = 0;
+        for (int i = 0; i < array.length; i++) {
+            if ((array.length - 1 > i) && array[i] == array[i + 1]) {
+                if (pre != array[i]) {
+                    list.add(array[i]);
                 }
-            } else {
-                i++;
-                j++;
+                pre = array[i];
             }
         }
-        return true;
-    }
+        return list.toString();
